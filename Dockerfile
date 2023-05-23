@@ -44,5 +44,5 @@ RUN mkdir -p /home/franka_ros2_ws/src
 WORKDIR /home/franka_ros2_ws
 RUN git clone https://github.com/frankaemika/franka_ros2.git src/franka_ros2
 RUN rosdep install -i --from-path src --rosdistro foxy -y
-RUN source /opt/ros/foxy/setup.bash && colcon build --symlink-install
-RUN source install/setup.sh
+RUN source /opt/ros/foxy/setup.bash && colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release --symlink-install
+RUN echo "source /home/franka_ros2_ws/install/setup.bash" >> ~/.bashrc
