@@ -24,6 +24,11 @@ After running Docker Desktop install WSL2 addition (there will be a pop-up windo
 
 ## Running on Linux:
 
+
+#### Allow for connections for GUI
+
+```xhost +``` 
+
 #### Run docker image with command:
 
 ```docker run --net=host -e DISPLAY=$DISPLAY -v /tmp/.X11-unix -it ros2_foxy```
