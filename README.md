@@ -1,8 +1,6 @@
-# franka_ros2_docker
+# Running ROS2 with GUI on Docker with [franka_ros2](https://github.com/frankaemika/franka_ros2) package.
 
-# For Windows:
-
-## Installation:
+## Installation (on Windows and Linux):
 
 #### Install Xlaunch Server for displaying GUI:
 
@@ -18,8 +16,14 @@ After running Docker Desktop install WSL2 addition (there will be a pop-up windo
 
 ```docker build -t ros2_foxy .```
 
-## Running:
+## Running on Windows:
 
 #### Run Xlaunch Server and setup a display with port 0. Then run docker image:
 
 ```docker run -e DISPLAY=host.docker.internal:0.0 -it ros2_foxy```
+
+## Running on Linux:
+
+#### Run docker image with command:
+
+```docker run --net=host -e DISPLAY=$DISPLAY -v /tmp/.X11-unix -it ros2_foxy```
